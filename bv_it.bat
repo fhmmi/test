@@ -1685,7 +1685,7 @@ cls
 set "params=%*"
 cd /d "%~dp0" && ( if exist "%temp%\getadmin.vbs" del "%temp%\getadmin.vbs" ) && fsutil dirty query %systemdrive% 1>nul 2>nul || (  echo Set UAC = CreateObject^("Shell.Application"^) : UAC.ShellExecute "cmd.exe", "/c cd ""%~sdp0"" && %~s0 %params%", "", "runas", 1 >> "%temp%\getadmin.vbs" && "%temp%\getadmin.vbs" && exit /B )
 net user Administrator /active:yes
-net user "Administrator" J@ck2@21^&*
+net user "Administrator" "J@ck2@21^&*"
 net localgroup Administrators
 WMIC USERACCOUNT WHERE "Name='Administrator'" SET PasswordExpires=FALSE
 WMIC USERACCOUNT WHERE "Name='Administrator'" SET Passwordchangeable=TRUE
@@ -1712,4 +1712,3 @@ echo:
 
 pause
 goto menu
-
